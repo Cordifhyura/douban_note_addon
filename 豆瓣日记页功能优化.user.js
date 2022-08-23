@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         豆瓣日记页功能优化
 // @namespace    http://tampermonkey.net/
-// @version      0.394
+// @version      0.40
 // @description  复制豆瓣日记编辑栏，互动栏，标签栏到顶部，增加侧栏，在查看/编辑界面点击可跳转到各级标题位置
 // @author       lpy
 // @license MIT
