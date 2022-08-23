@@ -158,14 +158,16 @@
 
         function jump(isOnEdit){
             //  跳转方法，点哪个子元素就传哪个
-            $('#sidenav').on('click','a',function(e){
-                let target = e.target;
-                let title = $(target).text();
+            $('#sidenav').on('click','a',function f(e){
+                let target = $(e.target);
+                let title = target.text();
+                target.off(e.type);
                 let jumper = isOnEdit?
                     $(".DRE-subject-info").add(":header").find(":contains("+title.trim().replace(/《|》/g,"")+")").last():
                     $(".note").find(":contains("+title.trim().replace(/《|》/g,"")+")").filter(":header,.title-text").last();
                 //  滚动跳转
                 $('html,body').animate({scrollTop:jumper.offset().top - 250}, "fast");
+                $(target).on(e.type,f);
             });
         };
 
